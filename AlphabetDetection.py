@@ -39,7 +39,7 @@ while True:
         roi=gray[upper_left[1]:bottom_right[1],upper_left[0],bottom_right[0]]
         img_pil=Image.fromarray(roi)
         image_pw=img_pil.convert('L')
-        image_pw_resized=image_pw.resize(28,28),Image.ANTIALIAS
+        image_pw_resized=image_pw.resize((28,28),Image.ANTIALIAS)
         image_pw_resized_inverted=PIL.ImageOps.invert(image_pw_resized)
         pixel_filter=20
         minPixel=np.percentile(image_pw_resized_inverted,pixel_filter)
